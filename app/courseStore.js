@@ -29,6 +29,7 @@ const useCourseStore = create(
             name:"courses"
         })
     )
+   // courseStore
 )
 
 export default useCourseStore;
