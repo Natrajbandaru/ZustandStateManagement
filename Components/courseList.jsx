@@ -1,6 +1,6 @@
  import React from "react";
  import useCourseStore from "../app/courseStore";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View ,Button} from "react-native";
 
 
  const CourseList=()=>{
@@ -15,11 +15,11 @@ import { StyleSheet, Text, View } from "react-native";
         <View>
             {courses.map((course,i)=>{
                 return(
-                    <View key={i} style={{backgroundColor:"red"}}>
+                    <View key={i} style={{backgroundColor:"red",flexDirection:"row",justifyContent:"space-around",alignContent:"space-around"}}>
                          <View style={styles.courseItemCol1}>
                            <Text>{course?.title}</Text>
                          </View>
-                         
+                         <Button style={styles.deleteBtn} title="Delete" onPress={()=>removeCourse(course.id)}></Button>
                      </View>
                 )
             })}

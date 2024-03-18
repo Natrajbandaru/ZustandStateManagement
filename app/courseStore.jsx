@@ -2,7 +2,8 @@ import create from 'zustand'
 import {devtools,persist} from 'zustand/middleware'
 
 
-const courseStore=(set)=>({
+const courseStore=(set)=>{
+    return{
         courses:[],
         addCourse:(course)=>{
             set((state)=>({
@@ -20,7 +21,7 @@ const courseStore=(set)=>({
                {...course, completed: !course.completed} : course)
             }))
         }
-    })
+    }}
 
 
 const useCourseStore = create(
