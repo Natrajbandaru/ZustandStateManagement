@@ -1,0 +1,11 @@
+--TenStackQuery
+   Note: TenstackQuery is Not for a fetchData it is done by AXOS OR FetchApi , it is used for After Fetching a data
+    
+    npm i @tanstack/react-query
+
+    -->Tenstack query is not a dataFetching it is also a statemanagemnt it replace a zestand and reactRedux
+
+    --> UseQuery
+      1) UseQuery is Used to get Data  from api
+      2) If we want to fetch data with out tenstack we need  to set useEffect ,state for a data, error messages,LOading etc..
+         Note: By useing tenstack this we can get easely 

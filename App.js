@@ -2,16 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import CourseForm from './Components/courseForm';
 import Arrow from './Example2/ArrowFunctions';
+import MainData from './TenStackQuery/Main';
+
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+const queryClient=new QueryClient({})
+
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    // <View style={styles.container}>
-    //   <CourseForm/>
-    // </View>
-    <Arrow/>
+    <QueryClientProvider client={queryClient}>
+      <View style={styles.container}>
+        {/* <CourseForm/> */}
+        <MainData/>
+      </View>
+    </QueryClientProvider>
   );
 }
 
