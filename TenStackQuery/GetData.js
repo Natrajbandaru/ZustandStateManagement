@@ -17,10 +17,10 @@ const MainData=()=>{
     if(error) return <Text style={{BackGroundColor:"black"}}>There was a error</Text>
 
     if(isLoading) return <Text style={{BackGroundColor:"black"}}>There was a Loading..</Text>
+    
     return(
         <ScrollView style={{BackGroundColor:"black"}}>
             <Text style={{BackGroundColor:"black"}}>Hello</Text>
-
             <FlatList
                     data={data}
                     renderItem={({ item }) => (
@@ -31,10 +31,7 @@ const MainData=()=>{
                 )}
                 keyExtractor={(item) => item.id.toString()}
             />
-
-          
         </ScrollView>
     )
 }
-
 export default MainData;
