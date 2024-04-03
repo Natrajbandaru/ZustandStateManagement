@@ -2,23 +2,19 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import CourseForm from './Components/courseForm';
 import Arrow from './Example2/ArrowFunctions';
-import MainData from './TenStackQuery/Main';
+import PostData from './TenStackQuery/PostData';
 
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
-const queryClient=new QueryClient({})
+import { QueryClient,QueryClientProvider} from '@tanstack/react-query'
+const queryClient=new QueryClient({
+  defaultOptions:{queries:{staleTime:3000 ,gcTime:1000*(60*1000)}}  
+})
 
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <View style={styles.container}>
         {/* <CourseForm/> */}
-        <MainData/>
+        <PostData/>
       </View>
     </QueryClientProvider>
   );
