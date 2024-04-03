@@ -1,0 +1,159 @@
+YouLearn:
+
+    anyTypes
+
+        JS:       number, string, bollean, null, undefined, objects
+        TypeScript: any , unknown,  never,  enum, tuple
+
+        Note: We can not declare a number or a boolean if we inesatlize anything it well convert to that
+
+            let sales =10;
+            let salesLarge :number=1_50_000;
+            let course :string="Natraj"
+            let booleanValue :boolean=true;
+
+
+            let sales; Any
+
+             let anything;
+
+            anything=1;
+            anything="num";
+
+            function rendertype(document :number){
+                console.log(document);
+            }
+
+
+    arrays
+       
+         // In javaScript it well work due to it can pass anything in typescript we need to declare it
+         var arr=["ss","sd",22];
+
+         var art :number[] = [1,2,3];
+
+         var stringarr :string[] = ["kal","pop"];
+          
+         var anyarray = ["oo",12]
+
+         let numbers=[];
+         numbers[0]=1;
+         numbers[1]=4;
+
+
+    tuples
+
+      // Tuples are use in typescript to declare a differnt vareabels in string
+
+        let user: [number, string,boolean,number]=[1,'Mosh',true,0];
+        user.push(0);
+        console.log(user);
+
+    enums
+
+        //Enums are used for a random Numbers and declare  a number of constants in a one
+       //Note:  If integer pass 1 it well auto increment
+
+          const small = 1;
+          const medium = 2;
+          const large = 3;
+
+          //For integer
+          enum Size {Small=0 ,Medium, Large}
+
+          enum Sizedata {SmallString="ss" ,MediumString="m", LargeString="l"}
+
+          let mysize :Size = Size.Large;
+
+          console.log(mysize)
+
+    functions
+
+                function calculation(na :number){
+                        
+                    return na;
+                }
+
+                        
+                function calculation2(na :number) :string{
+                        
+                    return "";
+                }
+
+                function calculation3(na :number) :any{
+                        
+                    return 45;
+                }
+
+                function calculation4(na :number, num? :string) :any{
+                    let s;   
+                    return 45;
+                }
+
+                function calculation5(na=22 , num? :string) :any{
+                    let s;   
+                return 45;
+            }
+
+             calculation4(2);
+
+Type aliases
+union and intersaction
+Type narowing
+nullabel types
+the unkown type
+the never type
+
+
+    objects:
+        let employe:{
+            readonly id: number,
+                name: string,
+                retire :(date :Date)=>void
+            } = {id : 1, name : "sss",
+                retire:(date :Date)=>{
+                    console.log(date);
+                }
+            }
+        
+     7a) TypeAreas:  type
+           
+           Problems with a above JSON:
+              1) if we want to declare same object it can not used due to it type areas atre came
+              2) code is clambze
+
+          
+          
+         type  Employe = {
+            readonly id: number,
+            name: string,
+            retire :(date :Date)=>void
+         }
+
+         let emp :Employe ={
+            id : 1, name : "sss",
+             retire:(date :Date)=>{
+                console.log(date);
+             }
+
+         }
+
+     //7b) Narrowing: typeof
+
+        function kgTons( weight :number | string) :number{
+
+            if(typeof weight === "number"){
+                return weight *2.2;
+            }
+            else{
+               return parseInt (weight);
+            }
+
+        }
+
+
+
+
+
+    
+
